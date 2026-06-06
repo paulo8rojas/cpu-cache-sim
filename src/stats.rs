@@ -2,8 +2,8 @@
 #[derive(Debug, Default)]
 pub struct Stats {
     // TODO: fields for hits, misses, and any other metrics you want
-    hit_count: u32,
-    miss_count: u32,
+    hit_count: u64,
+    miss_count: u64,
 }
 
 impl Stats {
@@ -23,7 +23,7 @@ impl Stats {
 
     /// Total number of accesses (hits + misses).
     pub fn total(&self) -> u64 {
-        todo!()
+        self.hit_count + self.miss_count
     }
 
     /// Hit rate as a value in [0.0, 1.0]. Returns 0.0 if no accesses yet.
