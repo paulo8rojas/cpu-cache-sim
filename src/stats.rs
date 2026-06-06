@@ -2,6 +2,8 @@
 #[derive(Debug, Default)]
 pub struct Stats {
     // TODO: fields for hits, misses, and any other metrics you want
+    hit_count: u32,
+    miss_count: u32,
 }
 
 impl Stats {
@@ -10,11 +12,13 @@ impl Stats {
     }
 
     pub fn record_hit(&mut self) {
-        todo!()
+        self.hit_count += 1;
+        println!("cache hit!")
     }
 
     pub fn record_miss(&mut self) {
-        todo!()
+        self.miss_count += 1;
+        println!("cache miss!")
     }
 
     /// Total number of accesses (hits + misses).
