@@ -1,0 +1,22 @@
+[package]
+name = "cpu-cache-sim"
+version = "0.1.0"
+edition = "2021"
+description = "A set-associative CPU cache simulator with LRU replacement in Rust"
+license = "MIT"
+readme = "README.md"
+
+[[bin]]
+name = "cpu-cache-sim"
+path = "src/main.rs"
+
+[lib]
+name = "cpu_cache_sim"
+path = "src/lib.rs"
+
+[dependencies]
+# TODO: add dependencies as needed
+# e.g. clap for CLI args, serde for trace file parsing
+
+[dev-dependencies]
+# TODO: add test utilities as needed
