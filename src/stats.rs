@@ -8,7 +8,10 @@ pub struct Stats {
 
 impl Stats {
     pub fn new() -> Self {
-        todo!()
+        Self {
+            hit_count: 0,
+            miss_count: 0,
+        }
     }
 
     pub fn record_hit(&mut self) {
@@ -28,12 +31,15 @@ impl Stats {
 
     /// Hit rate as a value in [0.0, 1.0]. Returns 0.0 if no accesses yet.
     pub fn hit_rate(&self) -> f64 {
-        todo!()
+        (self.hit_count as f64) / (self.total() as f64)
     }
 
     /// Pretty-print a summary to stdout.
     pub fn print_summary(&self) {
         // TODO: print hits, misses, total, hit rate
-        todo!()
+        println!("Hits: {}",self.hit_count);
+        println!("Misses: {}",self.miss_count);
+        println!("Total Accesses {}",self.total());
+        println!("Hit Rate: {}",self.hit_rate());
     }
 }
